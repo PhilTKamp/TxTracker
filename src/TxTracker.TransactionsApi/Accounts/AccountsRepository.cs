@@ -123,6 +123,11 @@ public class AccountsRepository
     {
         var acc = await GetAsync(accountId, cancellationToken);
 
+        if (acc is null)
+        {
+            throw new AccountNotFoundException(accountId);
+        }
+
         Accounts.Remove(acc);
 
         await dbContext.SaveChangesAsync();

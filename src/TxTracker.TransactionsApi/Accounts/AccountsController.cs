@@ -91,7 +91,7 @@ public class AccountsController : ControllerBase
                 logger?.LogInformation("Account created. Id {accountId}, Name {accountName}", account.Id, account.Name);
                 return CreatedAtAction(nameof(GetAccount), account);
             }
-            catch (AccountConflictException ex)
+            catch (AccountConflictException)
             {
                 logger?.LogInformation("Conflicting account found on create request. Conflicting ID '{accountId}'", req.Id);
                 return Conflict(new { message = $"Account with ID '{req.Id}' already exists." });

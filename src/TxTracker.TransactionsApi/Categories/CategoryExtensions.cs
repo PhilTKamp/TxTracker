@@ -1,7 +1,4 @@
-using TxTracker.TransactionsApi.Categories;
-using TxTracker.TransactionsApi.Data.Models;
-
-namespace TxTracker.TransactionsApi.Accounts;
+namespace TxTracker.TransactionsApi.Categories;
 
 public static class CategoryExtensions
 {

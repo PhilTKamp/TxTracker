@@ -1,9 +1,4 @@
-using System.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OutputCaching;
-using Microsoft.VisualBasic;
-using TxTracker.TransactionsApi.Accounts;
-using TxTracker.TransactionsApi.Data.Models;
 
 namespace TxTracker.TransactionsApi.Categories;
 

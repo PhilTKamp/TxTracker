@@ -1,5 +1,6 @@
 services:
   db:
+    container_name: txDb
     image: postgres
     restart: always
     env_file:
@@ -9,6 +10,13 @@ services:
     ports:
       - 5432:5432
 
+  transactions-api:
+    container_name: transactions-api
+    build: ./src/TxTracker.TransactionsApi
+    env_file:
+      - TransactionsApi.env
+
+    
   adminer:
     image: adminer
     restart: always

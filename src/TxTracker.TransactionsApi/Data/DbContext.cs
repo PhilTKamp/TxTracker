@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TxTracker.TransactionsApi.Accounts;
 using TxTracker.TransactionsApi.Data.Models;
 
 namespace TxTracker.TransactionsApi.Data;

@@ -1,5 +1,3 @@
-using TxTracker.TransactionsApi.Data.Models;
-
 namespace TxTracker.TransactionsApi.Accounts;
 
 public static class AccountExtensions

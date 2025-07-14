@@ -1,4 +1,4 @@
-namespace TxTracker.TransactionsApi.Data.Models;
+namespace TxTracker.TransactionsApi.Accounts;
 
 public class Account
 {

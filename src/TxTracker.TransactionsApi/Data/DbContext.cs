@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TxTracker.TransactionsApi.Accounts;
 using TxTracker.TransactionsApi.Categories;
-using TxTracker.TransactionsApi.Data.Models;
 using TxTracker.TransactionsApi.Tags;
+using TxTracker.TransactionsApi.Transactions;
 
 namespace TxTracker.TransactionsApi.Data;
 

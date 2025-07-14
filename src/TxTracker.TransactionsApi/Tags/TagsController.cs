@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TxTracker.TransactionsApi.Tags;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class TagsController : ControllerBase
 {
     private readonly TagsRepository tagsRepository;
@@ -21,7 +21,7 @@ public class TagsController : ControllerBase
         this.logger = logger;
     }
 
-    [HttpGet(Name = "GetAccounts")]
+    [HttpGet(Name = "GetTags")]
     public async Task<ActionResult<IEnumerable<Tag>>> GetAsync([FromQuery] int page = 0, [FromQuery] int pageSize = -1, CancellationToken cancellationToken = default)
     {
         if (pageSize == -1)
@@ -36,7 +36,7 @@ public class TagsController : ControllerBase
         }
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetTag")]
     public async Task<ActionResult<Tag>> GetTagAsync(string id, CancellationToken cancellationToken = default)
     {
         var validGuid = Guid.TryParse(id, out var guid);

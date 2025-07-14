@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TxTracker.TransactionsApi.Transactions;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class TransactionsController : ControllerBase
 {
     private readonly TransactionsRepository transactionsRepository;
@@ -37,8 +37,8 @@ public class TransactionsController : ControllerBase
         }
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Transaction>> GetAsync(string id, CancellationToken cancellationToken = default)
+    [HttpGet("{id}", Name = "GetTransaction")]
+    public async Task<ActionResult<Transaction>> GetTransactionAsync(string id, CancellationToken cancellationToken = default)
     {
         var validGuid = Guid.TryParse(id, out var guid);
 

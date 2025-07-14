@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TxTracker.TransactionsApi.Accounts;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class AccountsController : ControllerBase
 {
     private readonly AccountsRepository accountsRepository;
@@ -36,7 +36,7 @@ public class AccountsController : ControllerBase
         }
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetAccount")]
     public async Task<ActionResult<Account>> GetAccount(string id, CancellationToken cancellationToken = default)
     {
         var validGuid = Guid.TryParse(id, out var guid);

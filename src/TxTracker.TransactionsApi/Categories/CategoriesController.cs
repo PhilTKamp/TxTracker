@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TxTracker.TransactionsApi.Categories;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class CategoriesController : ControllerBase
 {
     private readonly CategoriesRepository categoriesRepository;
@@ -36,7 +36,7 @@ public class CategoriesController : ControllerBase
         }
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}", Name = "GetCategory")]
     public async Task<ActionResult<Category>> GetCategory(string id, CancellationToken cancellationToken = default)
     {
         var validGuid = Guid.TryParse(id, out var guid);

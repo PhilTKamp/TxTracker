@@ -86,7 +86,7 @@ public class TransactionsController : ControllerBase
             {
                 var transaction = await transactionsRepository.CreateAsync(req.ToTransaction());
                 logger?.LogInformation("Transaction created. Id = {transactionId}", transaction.Id);
-                return CreatedAtAction(nameof(GetAsync), transaction);
+                return CreatedAtAction(nameof(GetTransactionAsync), transaction);
             }
             catch (TransactionConflictException)
             {
